@@ -168,7 +168,7 @@ internal struct BrowserBundle {
 	var alfredItem: Item {
 		.with {
 			$0.uid = id
-			$0.title = isDefault ? "〉\(name)" : name
+			$0.title = isDefault ? "✅️ \(name)" : name
 			$0.icon = ["path":icon]
 			$0.subtitle = url.path(percentEncoded: false)
 			let arg: String? = isDefault
