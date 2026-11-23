@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string>com.may-june-july.setbrowser</string>
+	<string>com.may-june-july.setdefaultbrowser</string>
 	<key>connections</key>
 	<dict>
 		<key>08F23A2B-C397-4417-997A-5C9A27CEFB70</key>
