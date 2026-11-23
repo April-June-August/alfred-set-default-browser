@@ -293,25 +293,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>externaltriggerid</key>
-				<string>init</string>
-				<key>passinputasargument</key>
-				<true/>
-				<key>passvariables</key>
-				<true/>
-				<key>workflowbundleid</key>
-				<string>self</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.callexternaltrigger</string>
-			<key>uid</key>
-			<string>6BE43D6A-C299-436B-B16B-9A2D488A3A03</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>acceptsmulti</key>
 				<integer>0</integer>
 				<key>filetypes</key>
@@ -352,28 +333,6 @@ echo -n "$name\t$bundleid"</string>
 			<string>EF9A350F-F1D9-485E-8AA3-44A302EC65D7</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argument</key>
-				<string>Setting default browser...</string>
-				<key>passthroughargument</key>
-				<false/>
-				<key>variables</key>
-				<dict>
-					<key>browser_bundleid</key>
-					<string>{var:split2}</string>
-					<key>valid</key>
-					<string>1</string>
-				</dict>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.argument</string>
-			<key>uid</key>
-			<string>CD48225D-5820-47C8-9E43-DB93C53EA937</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -421,6 +380,47 @@ echo -n "$name\t$bundleid"</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>externaltriggerid</key>
+				<string>init</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>6BE43D6A-C299-436B-B16B-9A2D488A3A03</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>Setting default browser...</string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>browser_bundleid</key>
+					<string>{var:split2}</string>
+					<key>valid</key>
+					<string>1</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>CD48225D-5820-47C8-9E43-DB93C53EA937</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -455,6 +455,14 @@ echo -n "$name\t$bundleid"</string>
 			<string>alfred.workflow.utility.argument</string>
 			<key>uid</key>
 			<string>761EFDA1-7B4C-4E9A-9714-BCDBF6EED38A</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>D2CC5F0B-DF80-472A-9926-6D3F00A5F86E</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -634,10 +642,23 @@ fi</string>
 			<integer>3</integer>
 		</dict>
 		<dict>
+			<key>config</key>
+			<dict>
+				<key>delimiter</key>
+				<string>,</string>
+				<key>discardemptyarguments</key>
+				<false/>
+				<key>outputas</key>
+				<integer>0</integer>
+				<key>trimarguments</key>
+				<true/>
+				<key>variableprefix</key>
+				<string>split</string>
+			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.junction</string>
+			<string>alfred.workflow.utility.split</string>
 			<key>uid</key>
-			<string>D2CC5F0B-DF80-472A-9926-6D3F00A5F86E</string>
+			<string>5E48A2F1-12D5-4B22-BCED-03482CCD2018</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -665,21 +686,15 @@ fi</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>delimiter</key>
-				<string>,</string>
-				<key>discardemptyarguments</key>
-				<false/>
-				<key>outputas</key>
-				<integer>0</integer>
-				<key>trimarguments</key>
+				<key>availableviaurlhandler</key>
 				<true/>
-				<key>variableprefix</key>
-				<string>split</string>
+				<key>triggerid</key>
+				<string>did.set</string>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.utility.split</string>
+			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
-			<string>5E48A2F1-12D5-4B22-BCED-03482CCD2018</string>
+			<string>CB81ADAD-AB36-4986-ACCC-7F118161F1A3</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -730,59 +745,6 @@ echo -n "$new_app"</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argument</key>
-				<string>'{query}'</string>
-				<key>cleardebuggertext</key>
-				<false/>
-				<key>processoutputs</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.utility.debug</string>
-			<key>uid</key>
-			<string>D5D0C62E-A7C4-4D2C-8916-0E879B25A059</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<true/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Default Browser</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>63156929-F5C1-45E6-B7D1-6B2270C48B01</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<true/>
-				<key>triggerid</key>
-				<string>did.set</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>CB81ADAD-AB36-4986-ACCC-7F118161F1A3</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>unstackview</key>
 				<false/>
 			</dict>
@@ -822,6 +784,44 @@ echo -n "$new_app"</string>
 			<string>alfred.workflow.utility.delay</string>
 			<key>uid</key>
 			<string>F38AF2B9-5D3F-4BF9-AFBD-5686355546CB</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Default Browser</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>63156929-F5C1-45E6-B7D1-6B2270C48B01</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string>'{query}'</string>
+				<key>cleardebuggertext</key>
+				<false/>
+				<key>processoutputs</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.debug</string>
+			<key>uid</key>
+			<string>D5D0C62E-A7C4-4D2C-8916-0E879B25A059</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -873,37 +873,37 @@ Set the default web browser via the `sdb` keyword. The macOS browser change conf
 			<key>colorindex</key>
 			<integer>5</integer>
 			<key>xpos</key>
-			<real>190</real>
+			<real>260</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>430</real>
 		</dict>
 		<key>15417FDB-8D05-4F19-8CF6-BBEF21D30440</key>
 		<dict>
 			<key>note</key>
 			<string>blacklist application</string>
 			<key>xpos</key>
-			<real>935</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>355</real>
+			<real>580</real>
 		</dict>
 		<key>23F4A26C-9791-4035-ACF0-36FA7BC19783</key>
 		<dict>
 			<key>xpos</key>
-			<real>370</real>
+			<real>625</real>
 			<key>ypos</key>
 			<real>95</real>
 		</dict>
 		<key>26CAEF6B-6566-444C-B871-0D026383623A</key>
 		<dict>
 			<key>xpos</key>
-			<real>370</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>465</real>
+			<real>610</real>
 		</dict>
 		<key>2AB3F5DA-BD4F-49A1-A7BF-2FCD0EEFCA7F</key>
 		<dict>
 			<key>xpos</key>
-			<real>320</real>
+			<real>460</real>
 			<key>ypos</key>
 			<real>95</real>
 		</dict>
@@ -912,60 +912,60 @@ Set the default web browser via the `sdb` keyword. The macOS browser change conf
 			<key>note</key>
 			<string>Automatically confirm your choice</string>
 			<key>xpos</key>
-			<real>700</real>
+			<real>1180</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>260</real>
 		</dict>
 		<key>401759DA-FCF2-4067-B042-EBF6645941F9</key>
 		<dict>
 			<key>xpos</key>
-			<real>420</real>
+			<real>610</real>
 			<key>ypos</key>
-			<real>300</real>
+			<real>405</real>
 		</dict>
 		<key>5E48A2F1-12D5-4B22-BCED-03482CCD2018</key>
 		<dict>
 			<key>xpos</key>
-			<real>370</real>
+			<real>460</real>
 			<key>ypos</key>
-			<real>355</real>
+			<real>460</real>
 		</dict>
 		<key>6024FD7F-C913-4E9D-B1B5-F9EF58F4C416</key>
 		<dict>
 			<key>xpos</key>
-			<real>780</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>385</real>
+			<real>610</real>
 		</dict>
 		<key>63156929-F5C1-45E6-B7D1-6B2270C48B01</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>875</real>
 		</dict>
 		<key>648D90AE-8A3A-43CE-BBCC-4F682A2639AA</key>
 		<dict>
 			<key>xpos</key>
-			<real>1080</real>
+			<real>1180</real>
 			<key>ypos</key>
-			<real>355</real>
+			<real>580</real>
 		</dict>
 		<key>6BE43D6A-C299-436B-B16B-9A2D488A3A03</key>
 		<dict>
 			<key>colorindex</key>
 			<integer>4</integer>
 			<key>xpos</key>
-			<real>700</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>65</real>
+			<real>125</real>
 		</dict>
 		<key>761EFDA1-7B4C-4E9A-9714-BCDBF6EED38A</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>1005</real>
 			<key>ypos</key>
-			<real>205</real>
+			<real>290</real>
 		</dict>
 		<key>78B4E73C-0836-435C-8234-2E0373576FBA</key>
 		<dict>
@@ -974,49 +974,49 @@ Set the default web browser via the `sdb` keyword. The macOS browser change conf
 			<key>xpos</key>
 			<real>50</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>430</real>
 		</dict>
 		<key>BC978C35-C11D-4DB9-8855-330D4D23C939</key>
 		<dict>
 			<key>xpos</key>
-			<real>935</real>
+			<real>1180</real>
 			<key>ypos</key>
-			<real>495</real>
+			<real>735</real>
 		</dict>
 		<key>BCFC5069-F5B4-4FA7-A775-2EE9111F3EFB</key>
 		<dict>
 			<key>xpos</key>
-			<real>650</real>
+			<real>965</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>430</real>
 		</dict>
 		<key>CB81ADAD-AB36-4986-ACCC-7F118161F1A3</key>
 		<dict>
 			<key>xpos</key>
-			<real>190</real>
+			<real>260</real>
 			<key>ypos</key>
-			<real>435</real>
+			<real>580</real>
 		</dict>
 		<key>CD48225D-5820-47C8-9E43-DB93C53EA937</key>
 		<dict>
 			<key>xpos</key>
-			<real>560</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>95</real>
+			<real>155</real>
 		</dict>
 		<key>D2CC5F0B-DF80-472A-9926-6D3F00A5F86E</key>
 		<dict>
 			<key>xpos</key>
-			<real>560</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>325</real>
+			<real>370</real>
 		</dict>
 		<key>D5D0C62E-A7C4-4D2C-8916-0E879B25A059</key>
 		<dict>
 			<key>xpos</key>
-			<real>560</real>
+			<real>810</real>
 			<key>ypos</key>
-			<real>415</real>
+			<real>905</real>
 		</dict>
 		<key>E013BD0A-C561-47FC-99A8-C675C7F5BAE9</key>
 		<dict>
@@ -1030,16 +1030,16 @@ Set the default web browser via the `sdb` keyword. The macOS browser change conf
 		<key>EF9A350F-F1D9-485E-8AA3-44A302EC65D7</key>
 		<dict>
 			<key>xpos</key>
-			<real>190</real>
+			<real>260</real>
 			<key>ypos</key>
 			<real>65</real>
 		</dict>
 		<key>F38AF2B9-5D3F-4BF9-AFBD-5686355546CB</key>
 		<dict>
 			<key>xpos</key>
-			<real>885</real>
+			<real>1005</real>
 			<key>ypos</key>
-			<real>525</real>
+			<real>765</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
