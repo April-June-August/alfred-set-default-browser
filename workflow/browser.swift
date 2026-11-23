@@ -171,6 +171,9 @@ internal struct BrowserBundle {
 			$0.title = isDefault ? "✅️ \(name)" : name
 			$0.icon = ["path":icon]
 			$0.subtitle = url.path(percentEncoded: false)
+			// Treat the result as a file so Alfred's file actions work on the app bundle
+			$0.type = "file"
+			$0.action = ["file": url.path(percentEncoded: false)]
 			let arg: String? = isDefault
 			    ? "same,\(name),already is the default browser"
 			    : "set,\(id)"
@@ -352,11 +355,15 @@ struct Item: Encodable, Inflatable {
 	var subtitle: String = ""
 	var arg: String? = nil
 	var valid: Bool = true
+	var type: String? = nil
+	var quicklookurl: String? = nil
+	var action: [String:String]? = nil
 	var icon: [String:String]? = nil
 	var cmdshift: Modifier? = nil
 
 	private enum CodingKeys: String, CodingKey {
 		case title, uid, subtitle, arg, icon, valid, mods
+		case type, action, quicklookurl
 	}
 
 	func encode(to encoder: Encoder) throws {
@@ -367,6 +374,9 @@ struct Item: Encodable, Inflatable {
 		try container.encodeIfPresent(uid, forKey: .uid)
 		try container.encodeIfPresent(arg, forKey: .arg)
 		try container.encodeIfPresent(icon, forKey: .icon)
+		try container.encodeIfPresent(type, forKey: .type)
+		try container.encodeIfPresent(action, forKey: .action)
+		try container.encodeIfPresent(quicklookurl, forKey: .quicklookurl)
 		if let cmdshift = cmdshift {
 			let wrapper = ["cmd+shift": cmdshift]
 			try container.encode(wrapper, forKey: .mods)
